@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', () => {
       const card = button.closest('.product-card');
       const title = card?.querySelector('.product-title')?.textContent?.trim() || 'Ankara Fabric';
-      const message = `Hello Tolu's Ankara Boutique!\nI would like to order:\n• Product: ${title}\n\nPlease confirm availability, price, and delivery options.`;
+      const message = `Hello RoyalKrystals!\nI would like to order:\n• Product: ${title}\n\nPlease confirm availability, price, and delivery options.`;
       const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
       window.open(waUrl, '_blank', 'noopener');
     });
