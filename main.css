@@ -4,32 +4,33 @@
 */
 
 :root {
-  --lilac-950: #3d2a4f;
-  --lilac-900: #4b3564;
-  --lilac-800: #5a3e73;
-  --lilac-700: #6c4e8a;
-  --lilac-600: #7e5da1;
-  --lilac-500: #a07bc6;
-  --lilac-400: #b894d8;
-  --lilac-300: #d1b9e8;
-  --lilac-200: #e6d8f4;
-  --lilac-100: #f4ecfb;
-  --lilac-50:  #fbf7ff;
+  /* Wine/Burgundy palette */
+  --lilac-950: #2b0a12;
+  --lilac-900: #3a0e17;
+  --lilac-800: #4a0f18;
+  --lilac-700: #5c1320;
+  --lilac-600: #731a28;
+  --lilac-500: #8c2332;
+  --lilac-400: #a23a3f;
+  --lilac-300: #c4565e;
+  --lilac-200: #e3a2a7;
+  --lilac-100: #f3d4d6;
+  --lilac-50:  #f9eced;
 
-  --text-900: #1f1630;
-  --text-700: #3a2d52;
-  --text-500: #574679;
-  --text-300: #7e6aa3;
+  --text-900: #1e0b0f;
+  --text-700: #3a1a22;
+  --text-500: #5a2a34;
+  --text-300: #8b4b58;
 
   --bg: #fff;
   --container: 1200px;
   --radius-lg: 18px;
   --radius-md: 14px;
   --radius-sm: 10px;
-  --shadow-lg: 0 20px 50px rgba(75, 53, 100, 0.18);
-  --shadow-md: 0 10px 30px rgba(75, 53, 100, 0.15);
-  --shadow-sm: 0 6px 12px rgba(75, 53, 100, 0.12);
-  --ring: 0 0 0 4px rgba(160, 123, 198, 0.25);
+  --shadow-lg: 0 20px 50px rgba(140, 35, 50, 0.18);
+  --shadow-md: 0 10px 30px rgba(140, 35, 50, 0.15);
+  --shadow-sm: 0 6px 12px rgba(140, 35, 50, 0.12);
+  --ring: 0 0 0 4px rgba(162, 60, 68, 0.25);
 }
 
 * { box-sizing: border-box; }
@@ -66,7 +67,7 @@ video { width: 100%; display: block; border-radius: var(--radius-md); }
 .brand { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: inherit; }
 .brand-logo {
   width: 48px; height: 48px; object-fit: cover; border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(160, 123, 198, 0.35);
+  box-shadow: 0 4px 12px rgba(162, 60, 68, 0.35);
 }
 .brand-text { line-height: 1; }
 .brand-top {
@@ -125,7 +126,7 @@ video { width: 100%; display: block; border-radius: var(--radius-md); }
 .product-card {
   background: #fff; border-radius: 22px; overflow: hidden; box-shadow: var(--shadow-md); transition: transform .2s ease, box-shadow .2s ease;
 }
-.product-card:hover { transform: translateY(-6px); box-shadow: 0 18px 45px rgba(75, 53, 100, 0.22); }
+.product-card:hover { transform: translateY(-6px); box-shadow: 0 18px 45px rgba(140, 35, 50, 0.22); }
 .product-media { aspect-ratio: 3/4; overflow: hidden; cursor: pointer; }
 .product-media img { width: 100%; height: 100%; object-fit: cover; }
 .product-body { padding: 0.9rem 1rem 1.1rem; }
@@ -142,13 +143,13 @@ video { width: 100%; display: block; border-radius: var(--radius-md); }
 .about-inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 1.2rem; align-items: center; }
 .highlights { margin: 0.6rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.4rem; }
 .highlights li { padding-left: 1.1rem; position: relative; color: var(--text-700); }
-.highlights li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--lilac-600); position: absolute; left: 0; top: 0.6rem; box-shadow: 0 0 0 4px rgba(184,148,216,.25); }
+.highlights li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--lilac-600); position: absolute; left: 0; top: 0.6rem; box-shadow: 0 0 0 4px rgba(162,60,68,.25); }
 
 /* Contact */
 .contact-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; background: linear-gradient(135deg, var(--lilac-100), var(--lilac-200)); padding: 1.2rem 1.2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
 
 /* Footer */
-.site-footer { padding: 2rem 0 2.4rem; background: linear-gradient(180deg, rgba(184,148,216,.15), rgba(122,80,145,.08)); margin-top: 2rem; }
+.site-footer { padding: 2rem 0 2.4rem; background: linear-gradient(180deg, rgba(162,60,68,.15), rgba(92,19,32,.08)); margin-top: 2rem; }
 .footer-inner { display: grid; grid-template-columns: 1.1fr auto 1fr; align-items: center; gap: 1rem; }
 .footer-brand { display: flex; align-items: center; gap: 0.8rem; color: var(--text-700); }
 .footer-brand img { width: 44px; height: 44px; object-fit: cover; border-radius: 10px; box-shadow: var(--shadow-sm); }
