@@ -32,11 +32,41 @@ document.addEventListener('DOMContentLoaded', () => {
   productLinks.forEach((link) => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      const title = link.getAttribute('data-product') || link.closest('.product-card')?.querySelector('.product-title')?.textContent?.trim() || 'Ankara Fabric';
-      const message = `Hello Tolu's Ankara Boutique!\nI would like to order:\n• Product: ${title}\n\nPlease confirm availability, price, and delivery options.`;
-      const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-      window.open(waUrl, '_blank', 'noopener');
+      const imgEl = link.querySelector('img');
+      const src = imgEl?.getAttribute('src');
+      if (!src) return;
+      openLightbox(src, imgEl?.getAttribute('alt') || 'Preview');
     });
+  });
+
+  // Lightbox logic
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightboxImage');
+  const lightboxClose = document.getElementById('lightboxClose');
+
+  function openLightbox(src, alt) {
+    if (!lightbox || !lightboxImage) return;
+    lightboxImage.src = src;
+    lightboxImage.alt = alt || '';
+    lightbox.classList.add('open');
+    lightbox.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    if (!lightbox || !lightboxImage) return;
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('hidden', '');
+    lightboxImage.src = '';
+    document.body.style.overflow = '';
+  }
+
+  lightboxClose?.addEventListener('click', closeLightbox);
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
   });
 });
 

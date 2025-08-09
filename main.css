@@ -37,7 +37,7 @@ html, body { height: 100%; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
   color: var(--text-900);
   background: linear-gradient(180deg, var(--lilac-50), #fff 20%, var(--lilac-50));
 }
@@ -92,7 +92,7 @@ video { width: 100%; display: block; border-radius: var(--radius-md); }
 }
 .hero-inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: center; }
 .hero-copy h1 {
-  font-family: 'Playfair Display', serif; font-size: clamp(2.1rem, 2.6vw + 1rem, 3.2rem); line-height: 1.1;
+  font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 2.2vw + 1rem, 2.8rem); line-height: 1.1;
   margin: 0 0 0.7rem; color: var(--lilac-900);
 }
 .hero-copy p { margin: 0 0 1.2rem; color: var(--text-700); max-width: 55ch; }
@@ -107,7 +107,7 @@ video { width: 100%; display: block; border-radius: var(--radius-md); }
 /* Sections */
 .section { padding: 3rem 0; }
 .section-head { text-align: center; margin-bottom: 1.5rem; }
-.section-title { font-size: clamp(1.6rem, 1.1vw + 1rem, 2.2rem); margin: 0 0 0.4rem; color: var(--lilac-900); }
+.section-title { font-size: clamp(1.4rem, 1vw + 0.9rem, 2rem); margin: 0 0 0.4rem; color: var(--lilac-900); font-family: 'Cormorant Garamond', serif; }
 .muted { color: var(--text-500); }
 
 /* Brand focus */
@@ -184,6 +184,14 @@ video { width: 100%; display: block; border-radius: var(--radius-md); }
 
 /* Focus */
 button:focus-visible, a:focus-visible { outline: none; box-shadow: var(--ring); }
+
+/* Lightbox */
+.lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.75); display: none; align-items: center; justify-content: center; padding: 1rem; z-index: 100; }
+.lightbox.open { display: flex; }
+.lightbox-content { position: relative; max-width: 92vw; max-height: 92vh; }
+.lightbox-content img { max-width: 92vw; max-height: 92vh; width: auto; height: auto; display: block; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
+.lightbox-close { position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; border-radius: 999px; border: 0; background: #fff; color: var(--lilac-900); font-size: 1.4rem; line-height: 1; display: grid; place-items: center; cursor: pointer; box-shadow: var(--shadow-md); }
+.lightbox-close:hover { filter: brightness(0.95); }
 
 /* Responsive */
 @media (max-width: 1000px) {
