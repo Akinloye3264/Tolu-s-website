@@ -4,33 +4,33 @@
 */
 
 :root {
-  /* Wine/Burgundy palette */
-  --lilac-950: #2b0a12;
-  --lilac-900: #3a0e17;
-  --lilac-800: #4a0f18;
-  --lilac-700: #5c1320;
-  --lilac-600: #731a28;
-  --lilac-500: #8c2332;
-  --lilac-400: #a23a3f;
-  --lilac-300: #c4565e;
-  --lilac-200: #e3a2a7;
-  --lilac-100: #f3d4d6;
-  --lilac-50:  #f9eced;
+  /* Lilac palette (dark mode) */
+  --lilac-950: #3d2a4f;
+  --lilac-900: #4b3564;
+  --lilac-800: #5a3e73;
+  --lilac-700: #6c4e8a;
+  --lilac-600: #7e5da1;
+  --lilac-500: #a07bc6;
+  --lilac-400: #b894d8;
+  --lilac-300: #d1b9e8;
+  --lilac-200: #e6d8f4;
+  --lilac-100: #f4ecfb;
+  --lilac-50:  #fbf7ff;
 
-  --text-900: #1e0b0f;
-  --text-700: #3a1a22;
-  --text-500: #5a2a34;
-  --text-300: #8b4b58;
+  --text-900: #f6f2ff;
+  --text-700: #ddd2f2;
+  --text-500: #c5b5e6;
+  --text-300: #ad9bd9;
 
-  --bg: #fff;
+  --bg: #0f0b17;
   --container: 1200px;
   --radius-lg: 18px;
   --radius-md: 14px;
   --radius-sm: 10px;
-  --shadow-lg: 0 20px 50px rgba(140, 35, 50, 0.18);
-  --shadow-md: 0 10px 30px rgba(140, 35, 50, 0.15);
-  --shadow-sm: 0 6px 12px rgba(140, 35, 50, 0.12);
-  --ring: 0 0 0 4px rgba(162, 60, 68, 0.25);
+  --shadow-lg: 0 20px 50px rgba(160, 123, 198, 0.18);
+  --shadow-md: 0 10px 30px rgba(160, 123, 198, 0.15);
+  --shadow-sm: 0 6px 12px rgba(160, 123, 198, 0.12);
+  --ring: 0 0 0 4px rgba(160, 123, 198, 0.25);
 }
 
 * { box-sizing: border-box; }
@@ -40,7 +40,7 @@ body {
   margin: 0;
   font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
   color: var(--text-900);
-  background: linear-gradient(180deg, var(--lilac-50), #fff 20%, var(--lilac-50));
+  background: linear-gradient(180deg, #0f0b17, #130e20 40%, #0f0b17);
 }
 
 img { max-width: 100%; display: block; }
@@ -56,7 +56,7 @@ video { width: 100%; display: block; border-radius: var(--radius-md); }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255,255,255,0.75);
+  background: rgba(14,12,24,0.75);
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow-sm);
 }
@@ -94,7 +94,7 @@ video { width: 100%; display: block; border-radius: var(--radius-md); }
 .hero-inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: center; }
 .hero-copy h1 {
   font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 2.2vw + 1rem, 2.8rem); line-height: 1.1;
-  margin: 0 0 0.7rem; color: var(--lilac-900);
+  margin: 0 0 0.7rem; color: var(--lilac-200);
 }
 .hero-copy p { margin: 0 0 1.2rem; color: var(--text-700); max-width: 55ch; }
 .hero-ctas { display: flex; gap: 0.8rem; }
@@ -108,7 +108,7 @@ video { width: 100%; display: block; border-radius: var(--radius-md); }
 /* Sections */
 .section { padding: 3rem 0; }
 .section-head { text-align: center; margin-bottom: 1.5rem; }
-.section-title { font-size: clamp(1.4rem, 1vw + 0.9rem, 2rem); margin: 0 0 0.4rem; color: var(--lilac-900); font-family: 'Cormorant Garamond', serif; }
+.section-title { font-size: clamp(1.4rem, 1vw + 0.9rem, 2rem); margin: 0 0 0.4rem; color: var(--lilac-200); font-family: 'Cormorant Garamond', serif; }
 .muted { color: var(--text-500); }
 
 /* Brand focus */
@@ -124,14 +124,14 @@ video { width: 100%; display: block; border-radius: var(--radius-md); }
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 .product-card {
-  background: #fff; border-radius: 22px; overflow: hidden; box-shadow: var(--shadow-md); transition: transform .2s ease, box-shadow .2s ease;
+  background: #1a1426; border-radius: 22px; overflow: hidden; box-shadow: var(--shadow-md); transition: transform .2s ease, box-shadow .2s ease;
 }
-.product-card:hover { transform: translateY(-6px); box-shadow: 0 18px 45px rgba(140, 35, 50, 0.22); }
+.product-card:hover { transform: translateY(-6px); box-shadow: 0 18px 45px rgba(160, 123, 198, 0.22); }
 .product-media { aspect-ratio: 3/4; overflow: hidden; cursor: pointer; }
 .product-media img { width: 100%; height: 100%; object-fit: cover; }
 .product-body { padding: 0.9rem 1rem 1.1rem; }
 .product-title { margin: 0 0 0.2rem; font-size: 1.02rem; color: var(--text-900); }
-.price { margin: 0 0 0.6rem; color: var(--lilac-800); font-weight: 600; min-height: 1.2rem; }
+.price { margin: 0 0 0.6rem; color: var(--lilac-300); font-weight: 600; min-height: 1.2rem; }
 .actions { display: flex; gap: 0.6rem; }
 
 /* Videos */
@@ -146,16 +146,16 @@ video { width: 100%; display: block; border-radius: var(--radius-md); }
 .highlights li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--lilac-600); position: absolute; left: 0; top: 0.6rem; box-shadow: 0 0 0 4px rgba(162,60,68,.25); }
 
 /* Contact */
-.contact-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; background: linear-gradient(135deg, var(--lilac-100), var(--lilac-200)); padding: 1.2rem 1.2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
+.contact-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; background: linear-gradient(135deg, rgba(108,78,138,.25), rgba(90,62,115,.22)); padding: 1.2rem 1.2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
 
 /* Footer */
-.site-footer { padding: 2rem 0 2.4rem; background: linear-gradient(180deg, rgba(162,60,68,.15), rgba(92,19,32,.08)); margin-top: 2rem; }
+.site-footer { padding: 2rem 0 2.4rem; background: linear-gradient(180deg, rgba(108,78,138,.18), rgba(20,14,32,.6)); margin-top: 2rem; }
 .footer-inner { display: grid; grid-template-columns: 1.1fr auto 1fr; align-items: center; gap: 1rem; }
 .footer-brand { display: flex; align-items: center; gap: 0.8rem; color: var(--text-700); }
 .footer-brand img { width: 44px; height: 44px; object-fit: cover; border-radius: 10px; box-shadow: var(--shadow-sm); }
 .footer-links { display: flex; gap: 1rem; }
-.footer-links a { color: var(--text-700); text-decoration: none; }
-.footer-links a:hover { color: var(--lilac-900); }
+.footer-links a { color: var(--text-500); text-decoration: none; }
+.footer-links a:hover { color: var(--lilac-200); }
 .footer-copy { text-align: right; color: var(--text-500); font-size: 0.95rem; }
 
 /* Buttons */
