@@ -1,0 +1,207 @@
+/*
+  Tolu's Ankara Boutique — Lilac Theme
+  Fonts: Poppins, Playfair Display
+*/
+
+:root {
+  --lilac-950: #3d2a4f;
+  --lilac-900: #4b3564;
+  --lilac-800: #5a3e73;
+  --lilac-700: #6c4e8a;
+  --lilac-600: #7e5da1;
+  --lilac-500: #a07bc6;
+  --lilac-400: #b894d8;
+  --lilac-300: #d1b9e8;
+  --lilac-200: #e6d8f4;
+  --lilac-100: #f4ecfb;
+  --lilac-50:  #fbf7ff;
+
+  --text-900: #1f1630;
+  --text-700: #3a2d52;
+  --text-500: #574679;
+  --text-300: #7e6aa3;
+
+  --bg: #fff;
+  --container: 1200px;
+  --radius-lg: 18px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+  --shadow-lg: 0 20px 50px rgba(75, 53, 100, 0.18);
+  --shadow-md: 0 10px 30px rgba(75, 53, 100, 0.15);
+  --shadow-sm: 0 6px 12px rgba(75, 53, 100, 0.12);
+  --ring: 0 0 0 4px rgba(160, 123, 198, 0.25);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+  color: var(--text-900);
+  background: linear-gradient(180deg, var(--lilac-50), #fff 20%, var(--lilac-50));
+}
+
+img { max-width: 100%; display: block; }
+video { width: 100%; display: block; border-radius: var(--radius-md); }
+
+.container {
+  width: min(100% - 2rem, var(--container));
+  margin-inline: auto;
+}
+
+/* Header & Nav */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-sm);
+}
+.nav-container {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.9rem 0;
+}
+.brand { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: inherit; }
+.brand-logo {
+  width: 48px; height: 48px; object-fit: cover; border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(160, 123, 198, 0.35);
+}
+.brand-text { line-height: 1; }
+.brand-top {
+  font-weight: 700; letter-spacing: 0.4px; color: var(--lilac-800);
+}
+.brand-bottom {
+  font-size: 0.85rem; color: var(--text-500);
+}
+
+.nav { display: flex; gap: 1rem; }
+.nav a {
+  text-decoration: none; color: var(--text-700); font-weight: 500; padding: 0.5rem 0.8rem; border-radius: 999px;
+}
+.nav a:hover { background: var(--lilac-200); color: var(--lilac-900); }
+
+.hamburger { display: none; background: transparent; border: 0; padding: 0.4rem; }
+.hamburger span { display: block; width: 26px; height: 2px; background: var(--text-700); margin: 6px 0; border-radius: 2px; }
+
+/* Hero */
+.hero {
+  position: relative;
+  padding: 3.5rem 0 2rem;
+}
+.hero-inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: center; }
+.hero-copy h1 {
+  font-family: 'Playfair Display', serif; font-size: clamp(2.1rem, 2.6vw + 1rem, 3.2rem); line-height: 1.1;
+  margin: 0 0 0.7rem; color: var(--lilac-900);
+}
+.hero-copy p { margin: 0 0 1.2rem; color: var(--text-700); max-width: 55ch; }
+.hero-ctas { display: flex; gap: 0.8rem; }
+.hero-media img { border-radius: 28px; box-shadow: var(--shadow-lg); }
+.hero-bg-pattern {
+  position: absolute; inset: auto 0 -80px 0; height: 180px;
+  background: radial-gradient(60% 60% at 50% 0%, var(--lilac-200), transparent 70%);
+  pointer-events: none;
+}
+
+/* Sections */
+.section { padding: 3rem 0; }
+.section-head { text-align: center; margin-bottom: 1.5rem; }
+.section-title { font-size: clamp(1.6rem, 1.1vw + 1rem, 2.2rem); margin: 0 0 0.4rem; color: var(--lilac-900); }
+.muted { color: var(--text-500); }
+
+/* Brand focus */
+.brand-focus { padding: 2rem 0 1rem; }
+.brand-focus-inner { display: flex; align-items: center; gap: 1rem; justify-content: center; }
+.brand-focus-logo {
+  width: 68px; height: 68px; object-fit: cover; border-radius: 16px; box-shadow: var(--shadow-md);
+}
+
+/* Products */
+.product-grid {
+  display: grid; gap: 1.2rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.product-card {
+  background: #fff; border-radius: 22px; overflow: hidden; box-shadow: var(--shadow-md); transition: transform .2s ease, box-shadow .2s ease;
+}
+.product-card:hover { transform: translateY(-6px); box-shadow: 0 18px 45px rgba(75, 53, 100, 0.22); }
+.product-media { aspect-ratio: 3/4; overflow: hidden; cursor: pointer; }
+.product-media img { width: 100%; height: 100%; object-fit: cover; }
+.product-body { padding: 0.9rem 1rem 1.1rem; }
+.product-title { margin: 0 0 0.2rem; font-size: 1.02rem; color: var(--text-900); }
+.price { margin: 0 0 0.6rem; color: var(--lilac-800); font-weight: 600; min-height: 1.2rem; }
+.actions { display: flex; gap: 0.6rem; }
+
+/* Videos */
+.video-grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.video-card { margin: 0; background: #000; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); aspect-ratio: 16/9; }
+.video-card video { width: 100%; height: 100%; display: block; object-fit: cover; background: #000; }
+
+/* About */
+.about-inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 1.2rem; align-items: center; }
+.highlights { margin: 0.6rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.4rem; }
+.highlights li { padding-left: 1.1rem; position: relative; color: var(--text-700); }
+.highlights li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--lilac-600); position: absolute; left: 0; top: 0.6rem; box-shadow: 0 0 0 4px rgba(184,148,216,.25); }
+
+/* Contact */
+.contact-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; background: linear-gradient(135deg, var(--lilac-100), var(--lilac-200)); padding: 1.2rem 1.2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
+
+/* Footer */
+.site-footer { padding: 2rem 0 2.4rem; background: linear-gradient(180deg, rgba(184,148,216,.15), rgba(122,80,145,.08)); margin-top: 2rem; }
+.footer-inner { display: grid; grid-template-columns: 1.1fr auto 1fr; align-items: center; gap: 1rem; }
+.footer-brand { display: flex; align-items: center; gap: 0.8rem; color: var(--text-700); }
+.footer-brand img { width: 44px; height: 44px; object-fit: cover; border-radius: 10px; box-shadow: var(--shadow-sm); }
+.footer-links { display: flex; gap: 1rem; }
+.footer-links a { color: var(--text-700); text-decoration: none; }
+.footer-links a:hover { color: var(--lilac-900); }
+.footer-copy { text-align: right; color: var(--text-500); font-size: 0.95rem; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0.7rem 1.1rem; border-radius: 999px; border: 0; cursor: pointer; font-weight: 600; text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease, color .15s ease;
+}
+.btn-primary { color: #fff; background: linear-gradient(135deg, var(--lilac-700), var(--lilac-500)); box-shadow: var(--shadow-sm); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-primary:active { transform: translateY(0); }
+.btn-ghost { color: var(--lilac-800); background: transparent; border: 2px solid var(--lilac-300); }
+.btn-ghost:hover { background: var(--lilac-200); }
+
+.btn-whatsapp { position: relative; }
+.btn-whatsapp::after {
+  content: ""; width: 10px; height: 10px; border-radius: 50%; background: #25D366; margin-left: 8px;
+}
+
+/* FAB */
+.whatsapp-fab {
+  position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 54px; height: 54px;
+  display: grid; place-items: center; color: #fff; background: #25D366; border-radius: 50%; box-shadow: 0 10px 30px rgba(37, 211, 102, .4);
+}
+.whatsapp-fab:hover { filter: brightness(1.05); }
+.whatsapp-fab svg { width: 28px; height: 28px; }
+
+/* Focus */
+button:focus-visible, a:focus-visible { outline: none; box-shadow: var(--ring); }
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-inner { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .nav { position: absolute; top: 64px; right: 0; left: 0; background: rgba(255,255,255,.96); padding: 0.6rem; display: none; box-shadow: var(--shadow-sm); }
+  .nav.open { display: grid; grid-auto-rows: 1fr; }
+  .hamburger { display: block; }
+  .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .footer-inner { grid-template-columns: 1fr; text-align: center; }
+  .footer-copy { text-align: center; }
+}
+@media (max-width: 460px) {
+  .product-grid { grid-template-columns: 1fr; }
+  .video-grid { grid-template-columns: 1fr; }
+}
+
+
